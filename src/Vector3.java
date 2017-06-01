@@ -101,7 +101,7 @@ public class Vector3 {
     }
 
     /**
-     * 将当前3D向量设置为零向量。
+     * 将当前3D向量设置为零向量，即3D向量的加性单位元y（x + y = x）。
      * @return 被设置为零向量的当前3D向量实例。
      */
     public Vector3 zero() {
@@ -134,11 +134,12 @@ public class Vector3 {
     }
 
     /**
-     * 3D向量与标量相乘。
+     * 3D向量与标量相乘，如果标量为-1，则可以得到该3D向量实例的加性逆元（x + (-x) = 0，其中，x与-x大小相等，方向相反）。<br/>
+     * 此操作的几何意义是以|f|为因子缩放3D向量的长度，或以翻转（若f为负值）3D向量的方向。
      * @param f 标量。
      * @return 完成与标量相乘操作后的当前3D向量实例。
      */
-    public Vector3 multiply(final float f) {
+    public Vector3 multipljy(final float f) {
         this.mX *= f;
         this.mY *= f;
         this.mZ *= f;
@@ -196,7 +197,7 @@ public class Vector3 {
     }
 
     /**
-     * 计算输入3D向量的模。
+     * 计算输入3D向量的模，3D向量的模（大小）为其各向量分量平方和的平方根。
      * @param vector3 3D向量实例。
      * @return 该3D向量的模。
      */
